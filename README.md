@@ -7,7 +7,7 @@ Site acadêmico de Danielle Marques Simões, hospedado no GitHub Pages.
 - `index.html`: a página inteira (HTML e CSS no mesmo arquivo).
 - `CNAME`: contém `daniellesimoes.com`. Não apague, é o que liga o domínio ao site.
 - `.nojekyll`: diz ao GitHub para publicar os arquivos como estão.
-- `cv.pdf`: **falta subir**. É o PDF do CV da Dani, com exatamente este nome.
+- `Danielle_Marques_CV.pdf`: o CV da Dani. Para atualizar, suba o novo PDF com o mesmo nome.
 
 ## Como editar
 
