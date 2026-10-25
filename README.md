@@ -21,8 +21,10 @@ A cor de destaque fica na variável `--accent` no início do CSS.
 
 Os quadros tracejados (`<div class="ph">`) são espaços reservados. Para trocar por uma foto:
 
-1. Suba a imagem numa pasta `images/` (ex.: `images/perfil.jpg`).
-2. Troque o `<div class="ph ...">...</div>` por `<img src="images/perfil.jpg" alt="Danielle Marques Simões">`.
+1. Suba a imagem numa pasta `images/` (ex.: `images/trabalho1.jpg`).
+2. Troque o `<div class="ph">...</div>` por `<img src="images/trabalho1.jpg" alt="descrição da foto">`.
+
+Foto de perfil (círculo na coluna da esquerda): troque `<span class="todo">Photo</span>` dentro de `<div class="portrait">` por `<img src="images/perfil.jpg" alt="Danielle Marques Simões">`.
 
 ## DNS (no registrador do domínio)
 
