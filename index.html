@@ -47,8 +47,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .shell { display: grid; grid-template-columns: minmax(280px, 340px) 1fr; min-height: 100vh; }
 .side { min-width: 0; background: var(--side); border-right: 1px solid var(--rule); }
 .side-inner { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 48px 36px 32px; display: flex; flex-direction: column; gap: 26px; }
-.portrait { width: 132px; aspect-ratio: 1; border-radius: 50%; background: var(--paper); border: 1px dashed var(--rule); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 13px; color: var(--muted); overflow: hidden; }
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.portrait { width: 100%; max-width: 268px; aspect-ratio: 1; border-radius: 8px; background: var(--paper); overflow: hidden; margin: 0; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
+.side-top { display: grid; gap: 20px; }
 .side h1 { font-family: var(--display); font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.005em; margin: 0; }
 .side .role { margin: 10px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 15.5px; }
@@ -138,6 +139,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .rows li > .when { order: -1; color: var(--accent); font-size: 14.5px; font-weight: 600; font-variant-numeric: tabular-nums; padding-top: 2px; }
 .rows .sub { display: block; color: var(--muted); font-size: 15px; }
 
+.hobby { margin: 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: end; }
+.hobby img { width: 100%; height: auto; border-radius: 6px; }
+.hobby figcaption { color: var(--muted); font-size: 15.5px; }
+.hobby figcaption p { margin: 0 0 10px; color: var(--ink); font-size: 17px; }
+@media (max-width: 640px) { .hobby { grid-template-columns: 1fr; gap: 12px; } }
+
 footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
 @media (max-width: 960px) {
@@ -147,7 +154,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
   .side-top { display: flex; gap: 18px; align-items: center; }
   .side-top > div { min-width: 0; }
   .toc { margin-left: calc(-1 * var(--gutter)); }
-  .portrait { width: 84px; flex: none; }
+  .portrait { width: 88px; flex: none; border-radius: 50%; }
+  .portrait img { object-position: 45% 22%; transform: scale(1.35); transform-origin: 45% 25%; }
   .side h1 { font-size: 34px; }
   .contact { grid-auto-flow: column; justify-content: start; gap: 6px 16px; }
   .toc { margin: 0 calc(-1 * var(--gutter)); padding: 10px var(--gutter); display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; background: var(--side); border-top: 1px solid var(--rule); }
@@ -172,7 +180,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
   <aside class="side">
     <div class="side-inner">
       <div class="side-top">
-        <div class="portrait"><span class="todo">Photo</span></div>
+        <figure class="portrait"><img src="images/danielle-sailing.jpg" alt="Danielle Marques Simões at the helm of a sailboat" width="720" height="900"></figure>
         <div>
           <h1>Danielle Marques Simões</h1>
           <p class="role">Civil engineer and M.S. student, Aeronautics Institute of Technology (ITA), Brazil</p>
@@ -193,6 +201,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
         <a href="#media">Media</a>
         <a href="#teaching">Teaching</a>
         <a href="#education">Education</a>
+        <a href="#hobbies">Hobbies</a>
       </nav>
     </div>
   </aside>
@@ -342,6 +351,16 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
           <li><span>Graduate coursework, Archaeology of the Provincial Roman World<span class="sub">University of São Paulo (USP), non-degree</span></span><span class="when">2021</span></li>
           <li><span>B.S., Civil Engineering<span class="sub">Federal Institute of São Paulo (IFSP)</span></span><span class="when">2020</span></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="hobbies">
+      <h2>Hobbies</h2>
+      <div class="body">
+        <figure class="hobby">
+          <img src="images/danielle-singing.jpg" alt="Danielle singing on stage with a band" width="1024" height="712" loading="lazy">
+          <figcaption><p>Away from the lab I sail and sing. Music has been part of my life for a long time, including a few years teaching it as a volunteer.</p></figcaption>
+        </figure>
       </div>
     </section>
 
