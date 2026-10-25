@@ -125,6 +125,21 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .grid figcaption span { color: var(--muted); }
 .note { color: var(--muted); font-size: 14.5px; margin-top: 24px; }
 
+.work-img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.consult .bg { fill: var(--side); }
+.consult .sheet rect { fill: var(--card); stroke: var(--rule); }
+.consult .ink { fill: var(--ink); opacity: .75; }
+.consult .faint { fill: var(--rule); }
+.consult .check rect, .consult .box { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.consult .check path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.consult .axis { stroke: var(--rule); stroke-width: 1.5; fill: none; }
+.consult .dash { stroke-dasharray: 3 3; stroke: var(--muted); }
+.consult .bar { fill: var(--accent-soft); }
+.consult .bar.hi, .consult .gantt.hi { fill: var(--accent); }
+.consult .gantt { fill: var(--accent-soft); }
+.consult .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.consult .dot circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+
 /* Publications */
 .refs { list-style: none; padding: 0; margin: 0; counter-reset: none; }
 .refs li { padding: 10px 0 10px 16px; border-left: 2px solid var(--rule); margin-bottom: 8px; max-width: 72ch; font-size: 16px; }
@@ -274,19 +289,42 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
       <div class="body">
         <ul class="grid">
           <li><figure>
-            <div class="ph"><span class="todo">Photo: TBM lining rings, Line 2-Green</span></div>
+            <img class="work-img" src="images/work-tbm-tunnel.jpg" alt="TBM launch shaft and the tunnel lined with precast concrete rings, São Paulo Metro Line 2-Green" width="960" height="720" loading="lazy">
             <figcaption><strong>Line 2-Green expansion, TBM tunnels</strong><span>Construction supervision and concrete quality control of precast lining rings. Consórcio ICC, 2023 to present.</span></figcaption>
           </figure></li>
           <li><figure>
-            <div class="ph"><span class="todo">Photo: solar plant</span></div>
+            <img class="work-img" src="images/work-renewable-energy.jpg" alt="Construction site of a renewable energy project with precast concrete foundation rings" width="960" height="720" loading="lazy">
             <figcaption><strong>Renewable energy projects</strong><span>Project manager. Raízen Power, 2022 to 2023.</span></figcaption>
           </figure></li>
           <li><figure>
-            <div class="ph"><span class="todo">Photo: aggregate quarry</span></div>
+            <img class="work-img" src="images/work-aggregates.jpg" alt="Crushed stone aggregate on a vibrating screen at a quarry" width="516" height="387" loading="lazy">
             <figcaption><strong>Aggregates for concrete</strong><span>Monitoring of aggregate mining operations. Votorantim Cimentos, 2018 to 2019.</span></figcaption>
           </figure></li>
           <li><figure>
-            <div class="ph"><span class="todo">Photo: real estate or consultancy project</span></div>
+            <svg class="work-img consult" viewBox="0 0 400 300" role="img" aria-label="Illustration of consultancy work: a project report with a checklist, a bar chart, a trend line and a schedule">
+              <rect class="bg" width="400" height="300"/>
+              <g class="sheet"><rect x="28" y="30" width="140" height="190" rx="6"/></g>
+              <rect class="ink" x="44" y="48" width="78" height="9" rx="2"/>
+              <rect class="faint" x="44" y="66" width="108" height="5" rx="2"/><rect class="faint" x="44" y="77" width="96" height="5" rx="2"/>
+              <g class="check"><rect x="44" y="98" width="12" height="12" rx="2"/><path d="M47 104 l3 3 l6 -7"/></g><rect class="faint" x="64" y="101" width="84" height="6" rx="2"/>
+              <g class="check"><rect x="44" y="120" width="12" height="12" rx="2"/><path d="M47 126 l3 3 l6 -7"/></g><rect class="faint" x="64" y="123" width="70" height="6" rx="2"/>
+              <g class="check"><rect x="44" y="142" width="12" height="12" rx="2"/><path d="M47 148 l3 3 l6 -7"/></g><rect class="faint" x="64" y="145" width="78" height="6" rx="2"/>
+              <rect class="box" x="44" y="164" width="12" height="12" rx="2"/><rect class="faint" x="64" y="167" width="60" height="6" rx="2"/>
+              <rect class="faint" x="44" y="192" width="108" height="5" rx="2"/><rect class="faint" x="44" y="203" width="80" height="5" rx="2"/>
+              <g class="sheet"><rect x="188" y="30" width="184" height="100" rx="6"/></g>
+              <path class="axis" d="M204 112 H356"/>
+              <rect class="bar" x="212" y="84" width="18" height="28"/><rect class="bar" x="240" y="70" width="18" height="42"/>
+              <rect class="bar" x="268" y="76" width="18" height="36"/><rect class="bar hi" x="296" y="52" width="18" height="60"/>
+              <rect class="bar" x="324" y="62" width="18" height="50"/>
+              <g class="sheet"><rect x="188" y="142" width="184" height="78" rx="6"/></g>
+              <path class="axis" d="M204 204 H356"/>
+              <path class="line" d="M206 196 L234 186 L262 190 L290 172 L318 168 L350 156"/>
+              <g class="dot"><circle cx="234" cy="186" r="3"/><circle cx="290" cy="172" r="3"/><circle cx="350" cy="156" r="3"/></g>
+              <g class="sheet"><rect x="28" y="234" width="344" height="44" rx="6"/></g>
+              <rect class="faint" x="44" y="245" width="40" height="6" rx="2"/><rect class="faint" x="44" y="261" width="34" height="6" rx="2"/>
+              <rect class="gantt" x="100" y="244" width="120" height="8" rx="4"/><rect class="gantt hi" x="180" y="260" width="150" height="8" rx="4"/>
+              <path class="axis dash" d="M262 240 V274"/>
+            </svg>
             <figcaption><strong>Real estate and consultancy</strong><span>Project coordinator at Ekko Group and civil engineer at Avanza Engenharia, 2019 to 2022.</span></figcaption>
           </figure></li>
         </ul>
