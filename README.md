@@ -13,7 +13,7 @@ Site acadêmico de Danielle Marques Simões, hospedado no GitHub Pages.
 
 Abra `index.html` no próprio GitHub (ícone de lápis), altere o texto e clique em **Commit changes**. O site atualiza em 1 a 2 minutos.
 
-Trechos com fundo amarelo (`<span class="todo">`) ainda precisam ser completados: LinkedIn, Google Scholar e as fotos.
+Trechos com fundo amarelo (`<span class="todo">`) ainda precisam ser completados: as fotos dos projetos e dos trabalhos.
 
 A cor de destaque fica na variável `--accent` no início do CSS.
 

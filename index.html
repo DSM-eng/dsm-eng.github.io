@@ -50,7 +50,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .portrait { width: 100%; max-width: 268px; aspect-ratio: 1; border-radius: 8px; background: var(--paper); overflow: hidden; margin: 0; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
 .side-top { display: grid; gap: 20px; }
-.side h1 { font-family: var(--display); font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.005em; margin: 0; }
+.side-name { display: none; font-family: var(--display); font-size: 34px; line-height: 1; margin: 0; }
+.side .role { margin-top: 0; }
 .side .role { margin: 10px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 15.5px; }
 .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
@@ -65,7 +66,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .col { max-width: 760px; }
 
 /* Opening: research statement + the clay-to-binder figure */
-.lede { font-family: var(--display); font-size: clamp(28px, 3.4vw, 38px); line-height: 1.2; margin: 0 0 32px; max-width: 26em; }
+.site-title { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 5.6vw, 72px); line-height: 1; letter-spacing: -0.01em; margin: 0 0 32px; }
 .plate { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 22px 18px; margin: 0 0 8px; }
 .figure-hero { margin: 0; }
 .figure-hero svg { width: 100%; height: auto; }
@@ -139,11 +140,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .rows li > .when { order: -1; color: var(--accent); font-size: 14.5px; font-weight: 600; font-variant-numeric: tabular-nums; padding-top: 2px; }
 .rows .sub { display: block; color: var(--muted); font-size: 15px; }
 
-.hobby { margin: 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: end; }
+.hobby { margin: 0; display: grid; grid-template-columns: 260px 1fr; gap: 28px; align-items: center; }
 .hobby img { width: 100%; height: auto; border-radius: 6px; }
 .hobby figcaption { color: var(--muted); font-size: 15.5px; }
 .hobby figcaption p { margin: 0 0 10px; color: var(--ink); font-size: 17px; }
-@media (max-width: 640px) { .hobby { grid-template-columns: 1fr; gap: 12px; } }
+@media (max-width: 640px) { .hobby { grid-template-columns: 1fr; gap: 14px; } .hobby img { max-width: 300px; } }
 
 footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
@@ -156,7 +157,9 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
   .toc { margin-left: calc(-1 * var(--gutter)); }
   .portrait { width: 88px; flex: none; border-radius: 50%; }
   .portrait img { object-position: 45% 22%; transform: scale(1.35); transform-origin: 45% 25%; }
-  .side h1 { font-size: 34px; }
+  .side-name { display: block; }
+  .side .role { margin-top: 10px; }
+  .site-title { display: none; }
   .contact { grid-auto-flow: column; justify-content: start; gap: 6px 16px; }
   .toc { margin: 0 calc(-1 * var(--gutter)); padding: 10px var(--gutter); display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; background: var(--side); border-top: 1px solid var(--rule); }
   .toc::-webkit-scrollbar { display: none; }
@@ -182,7 +185,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
       <div class="side-top">
         <figure class="portrait"><img src="images/danielle-sailing.jpg" alt="Danielle Marques Simões at the helm of a sailboat" width="720" height="900"></figure>
         <div>
-          <h1>Danielle Marques Simões</h1>
+          <p class="side-name">Danielle Marques Simões</p>
           <p class="role">Civil engineer and M.S. student, Aeronautics Institute of Technology (ITA), Brazil</p>
         </div>
       </div>
@@ -190,7 +193,6 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
         <li><a href="mailto:danielle@ita.br">danielle@ita.br</a></li>
         <li><a href="https://www.linkedin.com/in/danielle-marques-38216195/">LinkedIn</a></li>
         <li><a href="https://orcid.org/0009-0000-6576-7147">ORCID</a></li>
-        <li><a href="https://scholar.google.com/"><span class="todo">Google Scholar</span></a></li>
       </ul>
       <a class="cv" href="Danielle_Marques_CV.pdf">Download CV (PDF)</a>
       <nav class="toc" aria-label="Sections">
@@ -208,7 +210,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
 
   <main class="content">
     <div class="col">
-      <p class="lede">I develop geopolymer cements that set by just adding water, and I study how the calcination of the clay and the activator chemistry shape their microstructure and strength.</p>
+      <h1 class="site-title">Danielle Marques Simões</h1>
       <div class="plate">
         <figure class="figure-hero">
         <svg viewBox="0 0 600 200" role="img" aria-label="Three schematic panels. Kaolinite: ordered layers of silica tetrahedra on alumina octahedra with hydroxyl groups. Metakaolin: after calcination the hydroxyls leave as water and the layers become disordered, with aluminium shifting to lower coordination. Geopolymer: after activation, an amorphous network of silicon and aluminium tetrahedra, each aluminium balanced by a potassium ion."><g class="p1"><polygon class="si" points="18.0,60.0 7.6,42.0 28.4,42.0"/><polygon class="si" points="47.0,60.0 36.6,42.0 57.4,42.0"/><polygon class="si" points="76.0,60.0 65.6,42.0 86.4,42.0"/><polygon class="si" points="105.0,60.0 94.6,42.0 115.4,42.0"/><polygon class="si" points="134.0,60.0 123.6,42.0 144.4,42.0"/><polygon class="si" points="163.0,60.0 152.6,42.0 173.4,42.0"/><polygon class="al6" points="29.0,73.0 18.0,84.0 7.0,73.0 18.0,62.0"/><polygon class="al6" points="58.0,73.0 47.0,84.0 36.0,73.0 47.0,62.0"/><polygon class="al6" points="87.0,73.0 76.0,84.0 65.0,73.0 76.0,62.0"/><polygon class="al6" points="116.0,73.0 105.0,84.0 94.0,73.0 105.0,62.0"/><polygon class="al6" points="145.0,73.0 134.0,84.0 123.0,73.0 134.0,62.0"/><polygon class="al6" points="174.0,73.0 163.0,84.0 152.0,73.0 163.0,62.0"/><circle class="oh" cx="18.0" cy="90.0" r="2.6"/><circle class="oh" cx="47.0" cy="90.0" r="2.6"/><circle class="oh" cx="76.0" cy="90.0" r="2.6"/><circle class="oh" cx="105.0" cy="90.0" r="2.6"/><circle class="oh" cx="134.0" cy="90.0" r="2.6"/><circle class="oh" cx="163.0" cy="90.0" r="2.6"/><polygon class="si" points="18.0,140.0 7.6,122.0 28.4,122.0"/><polygon class="si" points="47.0,140.0 36.6,122.0 57.4,122.0"/><polygon class="si" points="76.0,140.0 65.6,122.0 86.4,122.0"/><polygon class="si" points="105.0,140.0 94.6,122.0 115.4,122.0"/><polygon class="si" points="134.0,140.0 123.6,122.0 144.4,122.0"/><polygon class="si" points="163.0,140.0 152.6,122.0 173.4,122.0"/><polygon class="al6" points="29.0,153.0 18.0,164.0 7.0,153.0 18.0,142.0"/><polygon class="al6" points="58.0,153.0 47.0,164.0 36.0,153.0 47.0,142.0"/><polygon class="al6" points="87.0,153.0 76.0,164.0 65.0,153.0 76.0,142.0"/><polygon class="al6" points="116.0,153.0 105.0,164.0 94.0,153.0 105.0,142.0"/><polygon class="al6" points="145.0,153.0 134.0,164.0 123.0,153.0 134.0,142.0"/><polygon class="al6" points="174.0,153.0 163.0,164.0 152.0,153.0 163.0,142.0"/><circle class="oh" cx="18.0" cy="170.0" r="2.6"/><circle class="oh" cx="47.0" cy="170.0" r="2.6"/><circle class="oh" cx="76.0" cy="170.0" r="2.6"/><circle class="oh" cx="105.0" cy="170.0" r="2.6"/><circle class="oh" cx="134.0" cy="170.0" r="2.6"/><circle class="oh" cx="163.0" cy="170.0" r="2.6"/><path class="hb" d="M6 100 H176"/></g><g class="p2"><polygon class="si" points="220.7,58.8 222.2,38.1 239.4,49.7"/><polygon class="si" points="255.1,60.0 247.0,40.9 267.6,43.4"/><polygon class="si" points="280.1,60.0 273.1,40.4 293.5,44.1"/><polygon class="si" points="321.8,53.9 306.9,39.4 326.9,33.7"/><polygon class="si" points="335.9,63.9 330.7,43.8 350.7,49.3"/><polygon class="si" points="360.3,64.3 362.8,43.7 379.4,56.3"/><polygon class="al4" points="226.9,86.3 223.6,69.3 240.0,74.9"/><polygon class="al6" points="259.5,71.7 254.0,84.7 240.9,79.2 246.5,66.2"/><polygon class="al4" points="281.0,80.9 273.3,65.3 290.6,66.4"/><polygon class="al4" points="304.7,72.1 321.1,66.5 317.7,83.5"/><polygon class="al6" points="354.3,77.2 344.3,87.2 334.3,77.2 344.3,67.2"/><polygon class="al4" points="369.8,82.7 370.8,65.4 385.3,74.9"/><polygon class="si" points="228.5,145.6 227.5,124.9 246.0,134.4"/><polygon class="si" points="263.9,136.6 247.6,123.7 266.9,116.0"/><polygon class="si" points="279.1,133.2 276.0,112.6 295.3,120.2"/><polygon class="si" points="315.7,144.7 302.6,128.6 323.1,125.3"/><polygon class="si" points="357.2,142.1 337.7,134.9 353.6,121.6"/><polygon class="si" points="370.0,145.7 358.9,128.2 379.6,127.3"/><polygon class="al4" points="233.2,163.2 226.9,147.1 244.0,149.7"/><polygon class="al4" points="253.5,167.9 254.2,150.6 268.8,159.9"/><polygon class="al6" points="289.4,156.3 276.3,161.5 271.0,148.4 284.2,143.1"/><polygon class="al4" points="313.7,157.6 313.5,140.3 328.6,148.8"/><polygon class="al4" points="328.5,147.0 344.2,139.8 342.5,157.1"/><polygon class="al4" points="360.4,161.9 367.4,146.0 377.6,160.0"/><path class="vap" d="M250 32 q-4 -5 0 -9 q4 -4 0 -9"/><path class="vap" d="M305 26 q-4 -5 0 -9 q4 -4 0 -9"/><path class="vap" d="M352 34 q-4 -5 0 -9 q4 -4 0 -9"/></g><g class="p3"><g class="net"><path d="M487.1 70.9 L503.9 108.8"/><path d="M458.6 143.8 L469.0 184.5"/><path d="M566.1 147.2 L543.2 176.0"/><path d="M541.1 33.7 L584.7 39.0"/><path d="M584.7 39.0 L595.1 69.6"/><path d="M541.1 33.7 L529.5 73.4"/><path d="M490.7 147.7 L522.8 140.5"/><path d="M469.0 184.5 L511.8 181.0"/><path d="M511.8 181.0 L543.2 176.0"/><path d="M452.0 75.8 L438.7 106.3"/><path d="M558.0 76.9 L595.1 69.6"/><path d="M578.7 107.5 L595.5 140.9"/><path d="M432.9 38.3 L452.0 75.8"/><path d="M595.1 69.6 L578.7 107.5"/><path d="M522.8 140.5 L566.1 147.2"/><path d="M438.7 106.3 L458.6 143.8"/><path d="M541.4 109.0 L522.8 140.5"/><path d="M487.1 70.9 L470.0 103.7"/><path d="M458.6 143.8 L438.4 184.4"/><path d="M490.7 147.7 L511.8 181.0"/><path d="M566.1 147.2 L595.5 140.9"/><path d="M452.0 75.8 L487.1 70.9"/><path d="M584.7 39.0 L558.0 76.9"/><path d="M578.7 107.5 L566.1 147.2"/><path d="M468.3 37.4 L504.2 35.2"/><path d="M438.7 106.3 L470.0 103.7"/><path d="M522.8 140.5 L543.2 176.0"/><path d="M468.3 37.4 L452.0 75.8"/><path d="M470.0 103.7 L490.7 147.7"/><path d="M487.1 70.9 L529.5 73.4"/><path d="M458.6 143.8 L490.7 147.7"/><path d="M529.5 73.4 L503.9 108.8"/><path d="M566.1 147.2 L575.4 184.6"/><path d="M438.4 184.4 L469.0 184.5"/><path d="M541.1 33.7 L558.0 76.9"/><path d="M503.9 108.8 L522.8 140.5"/><path d="M452.0 75.8 L470.0 103.7"/><path d="M504.2 35.2 L541.1 33.7"/><path d="M558.0 76.9 L541.4 109.0"/><path d="M470.0 103.7 L503.9 108.8"/><path d="M522.8 140.5 L511.8 181.0"/><path d="M504.2 35.2 L487.1 70.9"/><path d="M470.0 103.7 L458.6 143.8"/><path d="M541.4 109.0 L566.1 147.2"/><path d="M529.5 73.4 L558.0 76.9"/></g><polygon class="si" points="428.1,44.7 429.8,30.9 440.8,39.3"/><polygon class="al4" points="466.8,45.8 461.8,31.9 476.3,34.6"/><polygon class="si" points="503.8,43.2 497.4,30.9 511.3,31.5"/><polygon class="al4" points="533.4,30.1 548.1,28.8 541.9,42.2"/><polygon class="si" points="582.8,46.8 578.9,33.5 592.4,36.8"/><polygon class="si" points="444.1,75.3 456.5,69.2 455.6,83.0"/><polygon class="si" points="479.2,72.4 489.7,63.4 492.3,77.0"/><polygon class="si" points="522.7,77.6 529.3,65.4 536.6,77.2"/><polygon class="si" points="550.4,74.5 563.9,71.5 559.7,84.7"/><polygon class="al4" points="589.2,75.7 592.8,61.4 603.4,71.7"/><polygon class="si" points="436.4,113.9 433.3,100.4 446.5,104.5"/><polygon class="al4" points="461.8,106.2 471.9,95.5 476.1,109.6"/><polygon class="si" points="496.8,112.6 504.2,100.8 510.7,113.1"/><polygon class="si" points="533.4,108.9 545.5,102.1 545.4,116.0"/><polygon class="si" points="573.5,113.6 576.1,100.0 586.6,109.1"/><polygon class="si" points="451.2,140.9 464.9,138.9 459.8,151.8"/><polygon class="si" points="483.8,151.7 490.7,139.7 497.7,151.6"/><polygon class="al4" points="518.7,148.0 518.4,133.3 531.3,140.4"/><polygon class="si" points="560.1,152.5 564.5,139.3 573.7,149.7"/><polygon class="al4" points="591.2,148.3 591.3,133.5 604.0,140.9"/><polygon class="si" points="430.6,186.3 440.6,176.7 443.9,190.2"/><polygon class="al4" points="460.5,183.5 474.0,177.7 472.4,192.3"/><polygon class="si" points="503.8,181.0 515.9,174.1 515.8,188.0"/><polygon class="si" points="540.0,183.3 538.5,169.6 551.2,175.2"/><polygon class="al4" points="571.7,192.3 570.6,177.6 583.9,184.0"/><circle class="k" cx="471.0" cy="51.2" r="3"/><circle class="k" cx="553.4" cy="27.0" r="3"/><circle class="k" cx="598.6" cy="83.1" r="3"/><circle class="k" cx="479.3" cy="114.2" r="3"/><circle class="k" cx="514.5" cy="151.8" r="3"/><circle class="k" cx="606.6" cy="132.4" r="3"/><circle class="k" cx="482.5" cy="188.0" r="3"/><circle class="k" cx="588.3" cy="190.1" r="3"/></g><path class="arr" d="M186 100 h18 m-6 -6 l6 6 l-6 6"/><path class="arr" d="M396 100 h18 m-6 -6 l6 6 l-6 6"/></svg>
@@ -358,8 +360,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
       <h2>Hobbies</h2>
       <div class="body">
         <figure class="hobby">
-          <img src="images/danielle-singing.jpg" alt="Danielle singing on stage with a band" width="1024" height="712" loading="lazy">
-          <figcaption><p>Away from the lab I sail and sing. Music has been part of my life for a long time, including a few years teaching it as a volunteer.</p></figcaption>
+          <img src="images/danielle-singing.jpg" alt="Danielle singing on stage" width="448" height="622" loading="lazy">
+          <figcaption><p>My story with music started very early. I taught music to children at church, played the saxophone in the Philharmonic Orchestra of the Pentecostal Church God is Love, and played the guitar and sang in a band as a teenager.</p><p>Today I still play the guitar at home.</p></figcaption>
         </figure>
       </div>
     </section>
